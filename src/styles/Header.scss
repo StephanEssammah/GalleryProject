@@ -1,0 +1,50 @@
+.main-header {
+  background-color: lightgrey;
+  padding-top: 1rem;
+}
+
+.main-nav__logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+  padding: 1rem 0rem;
+
+  &__li {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    padding: .75rem 1.5rem;
+    background-color: lightgrey;
+    margin: 0 .5rem;
+    border: 1px solid rgb(197, 197, 197);;
+    text-transform: uppercase;
+    transition: transform 200ms;
+    
+    ::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      box-shadow: 0 0px 20px rgba(0, 0, 0, 0.13);
+      opacity: 0;
+      transition: opacity 200ms;
+    }
+
+    :hover::before {
+      opacity: 1;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    a {
+      text-decoration: none;
+      color: #A83288;
+    }
+  }
+}
