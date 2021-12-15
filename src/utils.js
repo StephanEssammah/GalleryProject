@@ -1,4 +1,4 @@
-import { clientID } from './ApiKey';
+const apiKey = process.env.REACT_APP_APIKEY
 
 const parseData = data => ({
   imgAlt: data.alt_description,
@@ -8,7 +8,7 @@ const parseData = data => ({
 });
 
 const fetchData = (input, pageNumber = 1, abortController) => new Promise((resolve, reject) => {
-  fetch(`https://api.unsplash.com/search/photos?page=${pageNumber}&query=${input}&client_id=${clientID}`, { signal: abortController.signal })
+  fetch(`https://api.unsplash.com/search/photos?page=${pageNumber}&query=${input}&client_id=${apiKey}`, { signal: abortController.signal })
     .then(response => response.json())
     .then(data => {
       const parsedData = data.results.map(parseData);
